@@ -1,0 +1,5 @@
+class AddCategoryRefToTips < ActiveRecord::Migration[7.2]
+  def change
+    add_reference :tips, :category, null: false, foreign_key: true
+  end
+end
