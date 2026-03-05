@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  skip_before_action :require_login, only: %i[new create]
+
   def new; end
 
   def create
@@ -10,5 +12,10 @@ class UserSessionsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+  
+  def destroy
+    logout
+    redirect_to root_path, status: :see_other, success: t('user_sessions.destroy.success')
   end
 end
