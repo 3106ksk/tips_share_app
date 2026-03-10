@@ -7,5 +7,6 @@ class Tip < ApplicationRecord
   validates :learning, presence: true
 
   belongs_to :user
+  belongs_to :category
 
 end
