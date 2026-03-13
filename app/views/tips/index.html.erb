@@ -1,5 +1,12 @@
-<h1 class="text-3xl font-bold underline">
-    Tips一覧
-</h1>
+<!-- Category Filter Bar -->
+<div class="bg-white p-4 mb-4 flex overflow-x-auto">
+    <% @categories.each do |category| %>
+    <div class="flex items-center mr-4 group cursor-pointer">
+      <%= link_to tips_path(category_id: category.id) do%>
+        <span class="text-pub-muted dark:text-[#a89c85] text-sm font-medium mb-1 group-hover:text-primary transition-colors"><%= category.name %></span>
+      <% end %>
+    </div>
+    <% end %>
+</div>
 
 <%= render @tips %>

@@ -1,8 +1,13 @@
 class TipsController < ApplicationController
   def index
-    @tips = Tip.all
+    @categories = Category.all
+    @tips = if params[:category_id].present?
+              Tip.where(category_id: params[:category_id]).order(created_at: :desc)
+            else
+              Tip.order(created_at: :desc)
+            end
   end
-
+  
   def new
     @tip = Tip.new
   end
