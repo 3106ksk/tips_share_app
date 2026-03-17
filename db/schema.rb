@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_03_09_050944) do
+ActiveRecord::Schema[7.2].define(version: 2026_03_17_000002) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,13 +34,12 @@ ActiveRecord::Schema[7.2].define(version: 2026_03_09_050944) do
     t.text "hypothesis", null: false
     t.string "action", null: false
     t.string "learning", null: false
-    t.bigint "reference_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
+    t.string "reference_url"
     t.index ["category_id"], name: "index_tips_on_category_id"
-    t.index ["reference_id"], name: "index_tips_on_reference_id"
     t.index ["user_id"], name: "index_tips_on_user_id"
   end
 
