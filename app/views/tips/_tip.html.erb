@@ -1,11 +1,17 @@
 <div class="divider">
     <div id="tip-id-<%= tip.id %>">
         <div class="card w-96 bg-base-100 card-sm shadow-sm">
-        <div class="card-body">
-            <h2 class="card-title"><%= tip.title %></h2>
-            <p><%= tip.problem %></p>
+            <div class="card-body">
+                <h2 class="card-title"><%= link_to tip.title, tip_path(tip) %></h2>
+                <div>
+                    <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wide">🔍 課題</span>
+                    <p class="mt-1"><%= tip.problem %></p>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide">⚡ 具体的な行動</span>
+                    <p class="mt-1"><%= tip.action %></p>
+                </div>
             </div>
-        </div>
         </div>  
     </div>
 </div>

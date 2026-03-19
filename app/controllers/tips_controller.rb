@@ -7,6 +7,10 @@ class TipsController < ApplicationController
               Tip.order(created_at: :desc)
             end
   end
+
+  def show
+    @tip = Tip.find(params[:id])
+  end
   
   def new
     @tip = Tip.new
@@ -22,6 +26,6 @@ class TipsController < ApplicationController
   end
 
   def tips_params
-    params.require(:tip).permit(:title, :problem, :hypothesis, :action, :learning, :category_id)
+    params.require(:tip).permit(:title, :problem, :hypothesis, :action, :learning, :category_id, :reference_url)
   end
 end

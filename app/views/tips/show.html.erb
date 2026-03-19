@@ -1,0 +1,69 @@
+<div class="flex-grow w-full max-w-[800px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
+  <div class="mb-6">
+    <%= link_to "一覧に戻る", tips_path %>
+  </div>
+
+  <div class="mb-8">
+    <h1>
+        <%= @tip.title %>
+    </h1>
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-4 border-t border-b border-card-border dark:border-[#3e3425]">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white dark:ring-[#3e3425]">
+          <img alt="Author avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlxSFSQTGn9SzLvTHo3kyWyIQ1HeLgCsbS4_SnnvIm-SuiZXekWh2PXeTEOY4IooaPSylgno9MkiehbAj-t7eXmgUwTbGjWE1BNJ4hMKDq8JLAa_VncD_ZsyiGAuSJ9RgxLvhgvRxdJ3I9lQFycB909AA-7b1838Qw1kn7pMpkyN9m9LSi5HUlh3GtfhRxSaumMFblRUB6i17d9EBAymPYIPAx4D7GbT-BE2n4YYunWgFJG3dwKnyqzMB1r5M-eL4BrNBI_jDcrZL8"/>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2 mb-0.5">
+            <span>Sarah_Dev</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <article class="flex flex-col gap-10">
+    <section class="section-bar section-amber">
+      <h2>🔍 課題</h2>
+      <div>
+        <p>
+            <%= @tip.problem %>
+        </p>
+      </div>
+    </section>
+
+    <section class="section-bar section-blue">
+      <h2>
+        💡 仮説・思考
+      </h2>
+      <div>
+        <p>
+            <%= @tip.hypothesis %>
+        </p>
+      </div>
+    </section>
+
+    <section class="section-bar section-text">
+      <h2>
+        ⚡ 具体的な行動
+      </h2>
+      <div>
+        <p>
+            <%= @tip.action %>
+        </p>
+      </div>
+    </section>
+
+    <section class="section-bar section-green">
+      <h2>🌱学び</h2>
+      <div>
+        <p>
+            <%= @tip.learning %>
+        </p>
+      </div>
+    </section>
+
+    <div class="pt-4">
+      <%= link_to '参考URLのリンク', @tip.reference_url %>
+    </div>
+  </article>
+</div>
