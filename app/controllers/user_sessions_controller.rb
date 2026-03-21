@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to new_tip_path, success: t('user_sessions.create.success')
+      redirect_to tips_path, success: t('user_sessions.create.success')
     else
       render :new, status: :unprocessable_entity
     end
