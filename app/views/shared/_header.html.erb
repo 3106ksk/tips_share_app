@@ -4,7 +4,7 @@
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Tips一覧", tips_path %></li>
       <li><%= link_to "Tips投稿", new_tip_path %></li>
-      <li>ログインユーザー：<%= current_user.name %></li>
+      <li>ユーザー名：<%= link_to current_user.name, profile_path %></li>
       <li><%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %></li>
     </ul>
   </nav>
