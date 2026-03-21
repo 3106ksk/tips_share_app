@@ -1,0 +1,6 @@
+<% flash.each do |message_type, message| %>
+  <div class="px-4 py-2 rounded-md text-black mb-4 bg-red-100">
+    <p class="text-sm">メッセージタイプ:<%= message_type  %>: </p>
+    <p class="text-lg font-bold">メッセージ:<%= message %></p>
+  </div>
+<% end %>
