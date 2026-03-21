@@ -8,14 +8,15 @@ class UserSessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to tips_path, success: t('user_sessions.create.success')
+      redirect_to tips_path, success: "ログインに成功しました。"
     else
+      flash.now[:alert] = 'メールアドレスまたはパスワードが正しくありません。'
       render :new, status: :unprocessable_entity
     end
   end
   
   def destroy
     logout
-    redirect_to root_path, status: :see_other, success: t('user_sessions.destroy.success')
+    redirect_to root_path, status: :see_other, success: "ログアウトしました。"
   end
 end

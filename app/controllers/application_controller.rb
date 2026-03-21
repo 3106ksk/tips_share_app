@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method :logged_in?, :current_user
   before_action :require_login
+  add_flash_types :success, :warning
 
   def logged_in?
     !!current_user
@@ -20,6 +21,6 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    redirect_to login_path, danger: t('defaults.flash_message.require_login') unless logged_in?
+    redirect_to login_path, warning: "ログインが必要です。" unless logged_in?
   end
 end
