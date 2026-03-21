@@ -19,8 +19,9 @@ class TipsController < ApplicationController
   def create
     @tip = current_user.tips.new(tips_params)
     if @tip.save
-      redirect_to tip_path(@tip), success: t('tips.create.success')
+      redirect_to tips_path, success: "投稿に作成に成功しました。"
     else
+      flash.now[:alert] = '投稿の作成に失敗しました。'
       render :new, status: :unprocessable_entity
     end
   end
