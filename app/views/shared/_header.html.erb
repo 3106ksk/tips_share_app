@@ -1,11 +1,11 @@
-<header>
-  <nav>
-    <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Tips一覧", tips_path %></li>
-      <li><%= link_to "Tips投稿", new_tip_path %></li>
-      <li>ユーザー名：<%= link_to current_user.name, profile_path %></li>
-      <li><%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %></li>
-    </ul>
+<header class="bg-[#5c3d2e] py-4">
+  <nav class="w-full items-center">
+    <div class="flex justify-center gap-6">
+      <div class="text-white font-bold"><%= link_to "みんなのTips", root_path %></div>
+      <div class="text-white font-bold"><%= link_to "Tips一覧", tips_path %></div>
+      <div class="text-white font-bold"><%= link_to "Tips投稿", new_tip_path %></div>
+      <div class="text-white font-bold">ユーザー名：<%= link_to current_user.name, profile_path %></div>
+      <div class="text-white font-bold"><%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %></div>
+    </div>
   </nav>
 </header>
