@@ -11,7 +11,11 @@
     </div>
     <% end %>
 </div>
-
+<!-- 掲示板一覧 -->
 <div class="max-w-4xl mx-auto">
-  <%= render @tips%>
+  <% if @tips.present? %>
+    <%= render @tips%>
+  <% else %>  
+    <div class="mb-3">投稿がありません</div>
+  <% end %>
 </div>
