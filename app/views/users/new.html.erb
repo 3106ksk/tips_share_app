@@ -1,19 +1,78 @@
-<%= form_with model: @user do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<div class="min-h-screen flex items-center justify-center px-8" style="background-color: #f5f0e8; padding-top: 80px;">
+  <div class="w-full max-w-md py-16">
+
+    <p class="text-center mb-6 tracking-widest"
+       style="color: #9b7d3c; font-family: 'Georgia', serif; font-style: italic; font-size: 0.7rem; letter-spacing: 0.35em;">
+      &mdash;&nbsp;Join Us&nbsp;&mdash;
+    </p>
+
+    <h2 class="text-center mb-14 font-light"
+        style="font-size: 1.6rem; color: #2c2c2c;
+               font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+               letter-spacing: 0.08em;">
+      新規アカウント作成
+    </h2>
+
+    <%= form_with model: @user do |form| %>
+      <div class="grid grid-cols-1 gap-8">
+        <div>
+          <%= form.label :name, "ユーザー名",
+              class: "block text-xs tracking-widest mb-3",
+              style: "color: #6b6b6b; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; letter-spacing: 0.15em;" %>
+          <%= form.text_field :name,
+              placeholder: "山田 太郎",
+              class: "block w-full px-0 py-3 bg-transparent text-sm focus:outline-none",
+              style: "border: none; border-bottom: 1px solid #c8b89a; color: #2c2c2c;
+                      font-family: 'Hiragino Kaku Gothic ProN', sans-serif; font-weight: 300;
+                      border-radius: 0;" %>
+        </div>
+        <div>
+          <%= form.label :email, "メールアドレス",
+              class: "block text-xs tracking-widest mb-3",
+              style: "color: #6b6b6b; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; letter-spacing: 0.15em;" %>
+          <%= form.email_field :email,
+              placeholder: "your@email.com",
+              class: "block w-full px-0 py-3 bg-transparent text-sm focus:outline-none",
+              style: "border: none; border-bottom: 1px solid #c8b89a; color: #2c2c2c;
+                      font-family: 'Hiragino Kaku Gothic ProN', sans-serif; font-weight: 300;
+                      border-radius: 0;" %>
+        </div>
+        <div>
+          <%= form.label :password, "パスワード",
+              class: "block text-xs tracking-widest mb-3",
+              style: "color: #6b6b6b; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; letter-spacing: 0.15em;" %>
+          <%= form.password_field :password,
+              placeholder: "••••••••",
+              class: "block w-full px-0 py-3 bg-transparent text-sm focus:outline-none",
+              style: "border: none; border-bottom: 1px solid #c8b89a; color: #2c2c2c;
+                      font-family: 'Hiragino Kaku Gothic ProN', sans-serif; font-weight: 300;
+                      border-radius: 0;" %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, "パスワード（確認）",
+              class: "block text-xs tracking-widest mb-3",
+              style: "color: #6b6b6b; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; letter-spacing: 0.15em;" %>
+          <%= form.password_field :password_confirmation,
+              placeholder: "••••••••",
+              class: "block w-full px-0 py-3 bg-transparent text-sm focus:outline-none",
+              style: "border: none; border-bottom: 1px solid #c8b89a; color: #2c2c2c;
+                      font-family: 'Hiragino Kaku Gothic ProN', sans-serif; font-weight: 300;
+                      border-radius: 0;" %>
+        </div>
+
+        <%= form.submit "アカウントを作成する",
+            class: "w-full py-4 mt-6 text-sm tracking-widest cursor-pointer transition-opacity hover:opacity-80",
+            style: "background-color: #9b7d3c; color: #f5f0e8;
+                    font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+                    font-weight: 500; letter-spacing: 0.15em; border: none;" %>
+      </div>
+    <% end %>
+
+    <p class="text-center mt-10 text-xs" style="color: #9ca3af; font-family: 'Hiragino Kaku Gothic ProN', sans-serif; font-weight: 300; letter-spacing: 0.05em;">
+      すでにアカウントをお持ちの方 →
+      <%= link_to "ログイン", login_path,
+          class: "transition-colors hover:opacity-60",
+          style: "color: #9b7d3c;" %>
+    </p>
   </div>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-  <%= form.submit "アカウント作成" %>
-<% end %>
+</div>
