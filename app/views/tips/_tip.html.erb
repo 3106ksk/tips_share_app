@@ -11,4 +11,11 @@
     <div class="pt-4">
       <%= link_to '参考URLのリンク', tip.reference_url %>
     </div>
+    <!-- 投稿者（コンテンツ下部） -->
+<div class="flex items-center justify-end gap-2 mt-5 pt-4 border-t border-black/10">
+  <span class="text-[11px] tracking-widest text-stone-400">投稿者：</span>
+  <div class="flex items-center gap-2">
+    <span class="text-[11px] tracking-widest text-stone-400"><%= tip.user.name %></span>
+  </div>
+</div>
 </div>
