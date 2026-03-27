@@ -1,17 +1,14 @@
-<div class="divider">
-    <div id="tip-id-<%= tip.id %>">
-        <div class="card w-96 bg-base-100 card-sm shadow-sm">
-            <div class="card-body">
-                <h2 class="card-title"><%= link_to tip.title, tip_path(tip) %></h2>
-                <div>
-                    <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wide">🔍 課題</span>
-                    <p class="mt-1"><%= tip.problem %></p>
-                </div>
-                <div>
-                    <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide">⚡ 具体的な行動</span>
-                    <p class="mt-1"><%= tip.action %></p>
-                </div>
-            </div>
-        </div>  
+<div id="tip-id-<%= tip.id %>" class="px-8 py-8 border-b border-[#d4c9b0]">
+  <h2 class="text-xl font-semibold mb-4" style="color: #2c2c2c;"><%= link_to tip.title, tip_path(tip) %></h2>
+  <div class="mb-4">
+    <span class="text-xs font-semibold uppercase tracking-widest" style="color: #9b7d3c;">課題</span>
+    <p class="mt-1 text-sm" style="color: #5a5a5a; line-height: 1.75;"><%= tip.problem %></p>
+  </div>
+  <div class="mb-4">
+    <span class="text-xs font-semibold uppercase tracking-widest" style="color: #9b7d3c;">具体的な行動</span>
+  <p class="text-sm" style="color: #6b6b6b; line-height: 1.75;"><%= tip.action %></p>
+  </div>
+    <div class="pt-4">
+      <%= link_to '参考URLのリンク', tip.reference_url %>
     </div>
 </div>
