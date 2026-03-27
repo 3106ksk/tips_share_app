@@ -1,11 +1,25 @@
-<header class="bg-[#5c3d2e] py-4">
-  <nav class="w-full items-center">
-    <div class="flex justify-center gap-6">
-      <div class="text-white font-bold"><%= link_to "みんなのTips", root_path %></div>
-      <div class="text-white font-bold"><%= link_to "Tips一覧", tips_path %></div>
-      <div class="text-white font-bold"><%= link_to "Tips投稿", new_tip_path %></div>
-      <div class="text-white font-bold">ユーザー名：<%= link_to current_user.name, profile_path %></div>
-      <div class="text-white font-bold"><%= link_to "ログアウト", logout_path, data: { turbo_method: :delete } %></div>
+<header class="fixed top-0 left-0 right-0 z-50 px-10 py-5" style="background-color: #f5f0e8;">
+  <nav class="flex items-center justify-between">
+    <%= link_to root_path do %>
+      <span class="text-sm font-medium tracking-wide"
+            style="color: #2c2c2c; font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;">学習Tips 掲示板</span>
+    <% end %>
+
+    <div class="flex items-center gap-8">
+      <%= link_to "Tips投稿", new_tip_path,
+          class: "text-xs font-semibold px-5 py-2 tracking-widest transition-opacity hover:opacity-80",
+          style: "background-color: #9b7d3c; color: #f5f0e8; font-family: 'Georgia', serif; letter-spacing: 0.15em;"%>
+      <%= link_to "Tips一覧", tips_path,
+          class: "text-xs tracking-widest transition-colors hover:opacity-60",
+          style: "color: #2c2c2c; font-family: 'Georgia', 'Garamond', serif; letter-spacing: 0.18em;" %>
+      <span style="color: #c8b89a;">|</span>
+      <%= link_to current_user.name, profile_path,
+          class: "text-xs tracking-widest transition-colors hover:opacity-60",
+          style: "color: #2c2c2c; font-family: 'Georgia', 'Garamond', serif; letter-spacing: 0.18em;" %>
+      <%= link_to "Logout", logout_path,
+          class: "text-xs font-semibold px-5 py-2 tracking-widest transition-opacity hover:opacity-80",
+          style: "color: #2c2c2c; font-family: 'Georgia', 'Garamond', serif; letter-spacing: 0.18em;",
+          data: { turbo_method: :delete } %>
     </div>
   </nav>
 </header>
