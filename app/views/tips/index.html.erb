@@ -1,9 +1,12 @@
 <!-- Category Filter Bar -->
-<div class="bg-white p-4 mb-4 flex overflow-x-auto">
+<div class="fixed top-16 left-0 right-0 z-40 px-4 py-3 flex items-center justify-center gap-0" style="background-color: #f5f0e8; ">
     <% @categories.each do |category| %>
-    <div class="flex items-center mr-4 group cursor-pointer">
+    <div class="flex items-center mr-10 group cursor-pointer">
       <%= link_to tips_path(category_id: category.id) do%>
-        <span class="text-pub-muted dark:text-[#a89c85] text-sm font-medium mb-1 group-hover:text-primary transition-colors"><%= category.name %></span>
+        <span class="flex items-center text-pub-muted dark:text-[#a89c85] text-sm font-medium mb-1 group-hover:text-primary transition-colors">
+        <span class="mx-2" style="color: #c8b89a;">|</span>
+          <%= category.name %>
+        </span>
       <% end %>
     </div>
     <% end %>
