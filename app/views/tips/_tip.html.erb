@@ -8,9 +8,11 @@
     <span class="text-xs font-semibold uppercase tracking-widest" style="color: #9b7d3c;">具体的な行動</span>
   <p class="text-sm" style="color: #6b6b6b; line-height: 1.75;"><%= tip.action %></p>
   </div>
-    <div class="pt-4">
-      <%= link_to '参考URLのリンク', tip.reference_url %>
-    </div>
+    <% if tip.reference_url.present? %>
+      <%= link_to '参考URL', tip.reference_url,
+            class: "text-[11px] tracking-wider text-stone-400 border border-black/15 px-2.5 py-0.5 rounded-sm hover:border-amber-700 hover:text-amber-700 transition-colors",
+            target: "_blank", rel: "noopener noreferrer" %>
+    <% end %>
     <!-- 投稿者（コンテンツ下部） -->
 <div class="flex items-center justify-end gap-2 mt-5 pt-4 border-t border-black/10">
   <span class="text-[11px] tracking-widest text-stone-400">投稿者：</span>
