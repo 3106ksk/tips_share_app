@@ -1,4 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  /* フェードアウトアニメーションの定義 */
+  --animate-fade-out: fade-out 3s ease both;
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
 @plugin "@tailwindcss/forms" {
   strategy: "base";
 }
