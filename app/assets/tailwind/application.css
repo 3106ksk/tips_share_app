@@ -2,7 +2,7 @@
 
 @theme {
   /* フェードアウトアニメーションの定義 */
-  --animate-fade-out: fade-out 3s ease both;
+  --animate-fade-out: fade-out 5s ease both;
 
   @keyframes fade-out {
     0% {
