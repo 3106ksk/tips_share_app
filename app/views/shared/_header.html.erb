@@ -1,6 +1,6 @@
 <header class="fixed top-0 left-0 right-0 z-50 px-10 py-5" style="background-color: #f5f0e8;">
   <nav class="flex items-center justify-between">
-    <%= link_to root_path do %>
+    <%= link_to tips_path do %>
       <span class="text-sm font-medium tracking-wide"
             style="color: #2c2c2c; font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;">学習Tips 掲示板</span>
     <% end %>
@@ -16,7 +16,7 @@
       <%= link_to current_user.name, profile_path,
           class: "text-xs tracking-widest transition-colors hover:opacity-60",
           style: "color: #2c2c2c; font-family: 'Georgia', 'Garamond', serif; letter-spacing: 0.18em;" %>
-      <%= link_to "Logout", logout_path,
+      <%= link_to "ログアウト", logout_path,
           class: "text-xs font-semibold px-5 py-2 tracking-widest transition-opacity hover:opacity-80",
           style: "color: #2c2c2c; font-family: 'Georgia', 'Garamond', serif; letter-spacing: 0.18em;",
           data: { turbo_method: :delete } %>
